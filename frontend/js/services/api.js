@@ -4,7 +4,7 @@
 
 const BASE_URL = window.location.hostname === 'localhost'
   ? 'http://localhost:4000/api'
-  : 'https://YOUR-BACKEND-NAME.onrender.com/api'; // <-- replace after deploying backend to Render
+  : 'https://jembe-inxu.onrender.com'; // <-- replace after deploying backend to Render
 
 class ApiService {
   constructor() {
