@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: farmers-connect-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_ORIGIN
+        sync: false
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: farmers-connect-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /sw.js
+        name: Service-Worker-Allowed
+        value: "/"
